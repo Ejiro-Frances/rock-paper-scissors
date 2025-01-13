@@ -272,11 +272,9 @@ body {
     transform: translate(-30%, 30%);
   }
   .img-holder-active {
-    transform: translateY(5%);
+    transform: translateY(0);
   }
-  /* .img-holder-active-user {
-    transform: translateX(20%);
-  } */
+
   .game-display {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
