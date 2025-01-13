@@ -71,23 +71,18 @@ for (let i = 0; i < userChoices.length; i++) {
     if (houseChoice <= 0.33) {
       const clonedRock = rockEl.cloneNode(true);
       clonedRock.classList.add("img-holder-active");
-      clonedRock.classList.add("img-holder-active-user");
-      // clonedRock.classList.add("img-holder-active-house");
       displayHouseChoice.appendChild(clonedRock);
       choiceByHouse = "rock";
     } else if (houseChoice <= 0.66) {
       const clonedPaper = paperEl.cloneNode(true);
       clonedPaper.classList.add("img-holder-active");
-      clonedPaper.classList.add("img-holder-active-user");
-      // clonedPaper.classList.add("img-holder-active-house");
       displayHouseChoice.appendChild(clonedPaper);
       choiceByHouse = "paper";
     } else {
       const clonedScissors = scissorsEl.cloneNode(true);
 
       clonedScissors.classList.add("img-holder-active");
-      clonedScissors.classList.add("img-holder-active-user");
-      // clonedScissors.classList.add("img-holder-active-house");
+
       displayHouseChoice.appendChild(clonedScissors);
 
       choiceByHouse = "scissors";
@@ -130,7 +125,7 @@ function rockPaperScissors() {
     // console.log("user wins");
   } else if (choiceByUser === "scissors" && choiceByHouse === "rock") {
     if (score > 1) {
-      outcomeEl.textContent = "House Win";
+      outcomeEl.textContent = "You Lose";
       score--;
       userScoreEl.textContent = score;
     }
@@ -142,7 +137,7 @@ function rockPaperScissors() {
     // console.log("user wins");
   } else if (choiceByUser === "rock" && choiceByHouse === "paper") {
     if (score > 1) {
-      outcomeEl.textContent = "House Win";
+      outcomeEl.textContent = "You Lose";
       score--;
       userScoreEl.textContent = score;
     }
@@ -154,14 +149,15 @@ function rockPaperScissors() {
     // console.log("user wins");
   } else if (choiceByUser === "paper" && choiceByHouse === "scissors") {
     if (score > 1) {
-      outcomeEl.textContent = "House Win";
+      outcomeEl.textContent = "You Lose";
       score--;
       userScoreEl.textContent = score;
     }
     // console.log("house wins");
   } else if (choiceByUser === choiceByHouse) {
     outcomeEl.textContent = "It's a tie";
-    // console.log("its a tie");
+    console.log("its a tie");
+    console.log(choiceByHouse, choiceByUser);
   }
 }
 
