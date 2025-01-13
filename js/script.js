@@ -5,7 +5,7 @@ const gamePageTwo = document.querySelector("#game-page-2");
 const outcomeContainerEl = document.querySelector("#outcome-container");
 const outcomeEl = document.querySelector("#outcome");
 const playAgainEl = document.querySelector("#again-button");
-let userScoreEl = document.querySelector("#user-score");
+const userScoreEl = document.querySelector("#user-score");
 // rules
 const rulesEl = document.querySelector("#rules");
 const rulesButtonEl = document.querySelector("#rules-btn");
@@ -122,9 +122,11 @@ function rockPaperScissors() {
     userScoreEl.textContent = score;
     // console.log("user wins");
   } else if (choiceByUser === "scissors" && choiceByHouse === "rock") {
-    outcomeEl.textContent = "House Win";
-    score--;
-    userScoreEl.textContent = score;
+    if (score > 1) {
+      outcomeEl.textContent = "House Win";
+      score--;
+      userScoreEl.textContent = score;
+    }
     // console.log("house wins");
   } else if (choiceByUser === "paper" && choiceByHouse === "rock") {
     outcomeEl.textContent = "You Win";
@@ -132,9 +134,11 @@ function rockPaperScissors() {
     userScoreEl.textContent = score;
     // console.log("user wins");
   } else if (choiceByUser === "rock" && choiceByHouse === "paper") {
-    outcomeEl.textContent = "House Win";
-    score--;
-    userScoreEl.textContent = score;
+    if (score > 1) {
+      outcomeEl.textContent = "House Win";
+      score--;
+      userScoreEl.textContent = score;
+    }
     // console.log("house wins");
   } else if (choiceByUser === "scissors" && choiceByHouse === "paper") {
     outcomeEl.textContent = "You Win";
@@ -142,18 +146,18 @@ function rockPaperScissors() {
     userScoreEl.textContent = score;
     // console.log("user wins");
   } else if (choiceByUser === "paper" && choiceByHouse === "scissors") {
-    outcomeEl.textContent = "House Win";
-    score--;
-    userScoreEl.textContent = score;
+    if (score > 1) {
+      outcomeEl.textContent = "House Win";
+      score--;
+      userScoreEl.textContent = score;
+    }
     // console.log("house wins");
   } else if (choiceByUser === choiceByHouse) {
     outcomeEl.textContent = "It's a tie";
     // console.log("its a tie");
   }
 }
-userScoreEl = 0
-  ? (userScoreEl.textContent = 0)
-  : (userScoreEl.textContent = score);
+
 // play again
 playAgainEl.addEventListener("click", () => {
   gamePageTwo.classList.add("hide");
