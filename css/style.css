@@ -1,0 +1,253 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  /* Primary */
+
+  --scissors-gradient: linear-gradient(
+    to right,
+    hsl(39, 89%, 49%),
+    hsl(40, 84%, 53%)
+  );
+  --paper-gradient: linear-gradient(
+    to right,
+    hsl(230, 89%, 62%),
+    hsl(230, 89%, 65%)
+  );
+  --rock-gradient: linear-gradient(
+    to right,
+    hsl(349, 71%, 52%),
+    hsl(349, 70%, 56%)
+  );
+  --lizard-gradient: linear-gradient(
+    to right,
+    hsl(261, 73%, 60%),
+    hsl(261, 72%, 63%)
+  );
+  --spock-gradient: linear-gradient(
+    to right,
+    hsl(189, 59%, 53%),
+    hsl(189, 58%, 57%)
+  );
+
+  /* Neutral */
+
+  --dark-text: hsl(229, 25%, 31%);
+  --score-text: hsl(229, 64%, 46%);
+  --header-outline: hsl(217, 16%, 45%);
+
+  /* Background */
+
+  --radial-gradient: linear-gradient(
+    to right,
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  font-size: 1.6rem;
+  background-image: var(--radial-gradient);
+  color: #fff;
+  padding: 2rem;
+  overflow-x: hidden;
+  max-width: 110rem;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2.2rem;
+  max-width: 70rem;
+  margin: 2rem auto;
+  padding: 0.8rem;
+  border: 0.2px solid var(--header-outline);
+  border-radius: 5px;
+}
+.c-score {
+  background: #eee;
+  border-radius: 2px;
+
+  padding: 1rem 3rem;
+}
+.c-score__title {
+  color: var(--score-text);
+  font-size: 2rem;
+}
+.c-score__output {
+  text-align: center;
+  color: var(--score-text);
+}
+
+/* main */
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+.triangle-svg-holder {
+  position: relative;
+}
+.img-holder {
+  height: 20rem;
+  width: 20rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.img-holder img {
+  width: 75%;
+  height: 75%;
+  background: #eee;
+  border-radius: 50%;
+  padding: 1.3rem;
+}
+
+.img-holder__paper {
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  background-image: var(--paper-gradient);
+}
+.img-holder__scissors {
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  background-image: var(--scissors-gradient);
+}
+.img-holder__rock {
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background-image: var(--rock-gradient);
+}
+.img-holder-active {
+  position: unset;
+  top: unset;
+  left: unset;
+  right: unset;
+  transform: unset;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.l-rules__btn {
+  /* display: flex; */
+  justify-self: end;
+  text-transform: uppercase;
+  border: 3px solid var(--header-outline);
+  padding: 1rem 2.5rem;
+  border-radius: 0.6rem;
+  letter-spacing: 1px;
+  background: transparent;
+  color: #eee;
+  font-size: 2rem;
+}
+
+/* ************ */
+/* GAME DISPLAY PAGE */
+/* ***************** */
+.game-display {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15rem;
+  justify-items: center;
+}
+.choice-title {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  /* text-align: center; */
+  margin-bottom: 10rem;
+}
+.g-choice {
+  height: 20rem;
+  width: 20rem;
+
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.04);
+  background: hsla(238, 48%, 15%, 0.253);
+}
+.game-display__result {
+  align-self: center;
+}
+.game-display__outcome {
+  text-transform: uppercase;
+  font-size: 4rem;
+  letter-spacing: 4px;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+.game-display__again {
+  cursor: pointer;
+  font-size: 1.6rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  background: #eee;
+  border-radius: 0.5rem;
+  padding: 1.3rem 3rem;
+  width: 100%;
+  transform: all 0.4s ease-in-out;
+}
+.game-display__again:hover {
+  color: red;
+}
+/* ************ */
+/* RULES OF THE GAMES */
+/* ***************** */
+.main {
+  position: relative;
+}
+.c-rules {
+  position: absolute;
+  top: 0;
+  left: 20%;
+  transform: translate(40%, 25%);
+  background-color: #eee;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 3rem;
+  gap: 2rem;
+  border-radius: 0.5rem;
+}
+.c-rules__title {
+  text-transform: uppercase;
+  color: var(--dark-text);
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: -1px;
+  justify-self: start;
+}
+.c-rules__img__container {
+  grid-column: span 2;
+}
+.c-rules--btn {
+  grid-row: 1;
+  grid-column: 2;
+  justify-self: end;
+  border: none;
+}
+/* ************ */
+/* HELPER CLASSES */
+/* ***************** */
+.hide {
+  display: none;
+}

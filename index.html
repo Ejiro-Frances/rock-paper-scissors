@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+    <!-- Score Rules You Picked The House Picked You Win You Lose Play Again -->
+  </head>
+  <body>
+    <header class="header">
+      <div class="g-title">
+        <p class="g-title__rock">ROCK</p>
+        <p class="g-title__paper">PAPER</p>
+        <p class="g-title__scissors">SCISSORS</p>
+      </div>
+      <!-- score div -->
+      <div class="c-score">
+        <p class="c-score__title">SCORE</p>
+        <h1 id="user-score" class="c-score__output"></h1>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- first game page -->
+      <section id="game-page-1" class="game-1">
+        <div class="triangle-svg-holder">
+          <img src="./images/bg-triangle.svg" alt="triangle shape" />
+          <div class="game-container">
+            <!-- paper -->
+            <div id="paper" class="img-holder img-holder__paper">
+              <img
+                src="./images/icon-paper.svg"
+                alt="A fist stretched with all fingers showing"
+              />
+            </div>
+            <!-- scissors -->
+            <div id="scissors" class="img-holder img-holder__scissors">
+              <img src="./images/icon-scissors.svg" alt="" />
+            </div>
+            <!-- rock -->
+            <div id="rock" class="img-holder img-holder__rock">
+              <img src="./images/icon-rock.svg" alt="A closed fist" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- second game page -->
+      <section id="game-page-2" class="game-display hide">
+        <!-- user choice -->
+        <article class="l-left">
+          <h2 class="choice-title">You picked</h2>
+
+          <div id="user-pick" class="g-choice"></div>
+        </article>
+        <!-- display win or lose -->
+        <div id="outcome-container" class="game-display__result">
+          <h2 id="outcome" class="game-display__outcome"></h2>
+          <button id="again-button" class="game-display__again">
+            play again
+          </button>
+        </div>
+        <!-- house choice -->
+        <article class="l-right">
+          <h2 class="choice-title">the house picked</h2>
+          <div id="house-pick" class="g-choice"></div>
+        </article>
+      </section>
+      <!-- rules container -->
+      <section id="rules" class="c-rules hide">
+        <h2 class="c-rules__title">rules</h2>
+
+        <div class="c-rules__img__container">
+          <img src="./images/image-rules.svg" alt="" />
+        </div>
+        <button id="rules-close-btn" class="c-rules--btn">
+          <img src="./images/icon-close.svg" alt="" />
+        </button>
+      </section>
+    </main>
+    <footer class="footer">
+      <!-- rules -->
+      <button id="rules-btn" class="l-rules__btn">Rules</button>
+    </footer>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
