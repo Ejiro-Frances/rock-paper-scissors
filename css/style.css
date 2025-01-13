@@ -63,6 +63,7 @@ body {
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 2.2rem;
   max-width: 70rem;
   margin: 2rem auto;
@@ -143,9 +144,9 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin: 1rem 0 2rem;
 }
 .l-rules__btn {
-  /* display: flex; */
   justify-self: end;
   text-transform: uppercase;
   border: 3px solid var(--header-outline);
@@ -157,9 +158,9 @@ body {
   font-size: 2rem;
 }
 
-/* ************ */
+/* **************** */
 /* GAME DISPLAY PAGE */
-/* ***************** */
+/* **************** */
 .game-display {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -250,11 +251,27 @@ body {
   .c-score {
     padding: 1rem 2rem;
   }
-
-  .img-holder {
-    height: 15rem;
-    width: 15rem;
+  .triangle-svg-holder {
+    width: 80%;
   }
+  .img-holder {
+    height: 13rem;
+    width: 13rem;
+  }
+
+  .img-holder__paper {
+    top: 0;
+    left: 0;
+    transform: translate(-28%, -40%);
+  }
+  .img-holder__scissors {
+    transform: translate(65%, -45%);
+  }
+  .img-holder__rock {
+    left: 50%;
+    transform: translate(-30%, 30%);
+  }
+
   .game-display {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
@@ -265,8 +282,8 @@ body {
     margin-bottom: 2rem;
   }
   .g-choice {
-    height: 15rem;
-    width: 15rem;
+    height: 13rem;
+    width: 13rem;
   }
   .game-display__result {
     grid-row: 2;
@@ -274,5 +291,15 @@ body {
   }
   .game-display__outcome {
     font-size: 3rem;
+  }
+  .c-rules {
+    min-height: 90vh;
+    top: -24%;
+    left: 0;
+
+    transform: unset;
+  }
+  .footer {
+    justify-content: center;
   }
 }
